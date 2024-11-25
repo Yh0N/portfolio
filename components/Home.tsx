@@ -38,7 +38,7 @@ return (
             }}
         >
             <img
-            src="/fondo.png"
+            src="/yo.jpeg"
             alt="Avatar"
             className="w-64 h-64 rounded-full object-cover"
             />
