@@ -1,8 +1,23 @@
+"use client";
 
-export default function Home() {
+import About from '../components/About';
+import Contact from '../components/Contact';
+import Experience from '../components/Experience';
+import Home from '../components/Home';
+import Interests from '../components/Interests';
+import Navbar from '../components/Navbar';
+import Projects from '../components/Projects';
+
+export default function Page() {
   return (
-    <main className="flex justify-center items-center h-screen bg-cyan-300">
-    <h1 className="text-4xl text-cyan-800 front-extrabold">My Portfolio</h1>
+    <main>
+      <Navbar />
+      <Home />
+      <About />
+      <Projects />
+      <Experience />
+      <Interests />
+      <Contact />
     </main>
   );
 }
