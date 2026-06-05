@@ -32,7 +32,7 @@ const About = () => {
             />
             <aside className="flex flex-col items-center justify-center space-y-8 mt-8 md:mt-0 md:ml-16 lg:ml-32">
               <h3 className="text-3xl sm:text-4xl md:text-5xl text-center font-semibold text-[#39CEAF] mb-4">INTERESES</h3>
-              <section className="flex justify-center space-x-6">
+              <section className="flex flex-wrap justify-center gap-4 sm:gap-6">
                 <article className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-[#323c48] rounded-full flex items-center justify-center group hover:bg-[#39CEAF]">
                   <FaPlane className="text-[#39CEAF] text-6xl sm:text-7xl md:text-8xl group-hover:text-[#323c48] opacity-100 group-hover:opacity-0 transition-opacity duration-300" />
                   <span className="text-[#39CEAF] text-lg sm:text-xl md:text-3xl font-semibold opacity-0 group-hover:opacity-100 group-hover:text-[#323c48] transition-opacity duration-300 absolute">
@@ -48,7 +48,7 @@ const About = () => {
                 </article>
               </section>
 
-              <section className="flex justify-center space-x-6 mt-8">
+              <section className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-6 sm:mt-8">
                 <article className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 bg-[#323c48] rounded-full flex items-center justify-center group hover:bg-[#39CEAF]">
                   <IoCarSportSharp className="text-[#39CEAF] text-6xl sm:text-7xl md:text-8xl group-hover:text-[#323c48] opacity-100 group-hover:opacity-0 transition-opacity duration-300" />
                   <span className="text-[#39CEAF] text-lg sm:text-xl md:text-3xl font-semibold opacity-0 group-hover:opacity-100 group-hover:text-[#323c48] transition-opacity duration-300 absolute">
