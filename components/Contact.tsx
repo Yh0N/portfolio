@@ -2,7 +2,8 @@
 
 import emailjs from 'emailjs-com';
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaPhoneAlt } from 'react-icons/fa';
+import { FaGithub, FaPhoneAlt, FaWhatsapp, FaFacebookF } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { FiInstagram } from 'react-icons/fi';
 import { IoLocationSharp } from 'react-icons/io5';
 import { SiGmail } from 'react-icons/si';
@@ -102,48 +103,48 @@ const Contact = () => {
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#39CEAF]/50 to-transparent"></div>
               
               <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
-                <div className="flex flex-col gap-2 group">
-                  <label className="text-sm font-medium text-gray-300 px-1 transition-colors group-focus-within:text-[#39CEAF]">Nombre</label>
+                <div className="flex flex-col gap-2 group relative">
+                  <label className="text-sm font-semibold text-gray-400 px-1 transition-colors group-focus-within:text-[#39CEAF]">Nombre</label>
                   <input 
                     type="text" 
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Tu nombre" 
-                    className="bg-[#161c27] border border-gray-600/50 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-[#39CEAF] focus:border-transparent outline-none transition-all placeholder-gray-500" 
+                    placeholder="¿Cómo te llamas?" 
+                    className="w-full bg-[#181d24] border border-gray-700/50 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#39CEAF]/30 focus:border-[#39CEAF] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)] hover:border-gray-500/50" 
                   />
                 </div>
-                <div className="flex flex-col gap-2 group">
-                  <label className="text-sm font-medium text-gray-300 px-1 transition-colors group-focus-within:text-[#39CEAF]">Email</label>
+                <div className="flex flex-col gap-2 group relative">
+                  <label className="text-sm font-semibold text-gray-400 px-1 transition-colors group-focus-within:text-[#39CEAF]">Email</label>
                   <input 
                     type="email" 
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="tu@email.com" 
-                    className="bg-[#161c27] border border-gray-600/50 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-[#39CEAF] focus:border-transparent outline-none transition-all placeholder-gray-500" 
+                    placeholder="tu@correo.com" 
+                    className="w-full bg-[#181d24] border border-gray-700/50 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#39CEAF]/30 focus:border-[#39CEAF] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)] hover:border-gray-500/50" 
                   />
                 </div>
-                <div className="flex flex-col gap-2 group">
-                  <label className="text-sm font-medium text-gray-300 px-1 transition-colors group-focus-within:text-[#39CEAF]">Asunto</label>
+                <div className="flex flex-col gap-2 group relative">
+                  <label className="text-sm font-semibold text-gray-400 px-1 transition-colors group-focus-within:text-[#39CEAF]">Asunto</label>
                   <input 
                     type="text" 
                     required
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    placeholder="Asunto del mensaje" 
-                    className="bg-[#161c27] border border-gray-600/50 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-[#39CEAF] focus:border-transparent outline-none transition-all placeholder-gray-500" 
+                    placeholder="¿De qué trata tu mensaje?" 
+                    className="w-full bg-[#181d24] border border-gray-700/50 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#39CEAF]/30 focus:border-[#39CEAF] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)] hover:border-gray-500/50" 
                   />
                 </div>
-                <div className="flex flex-col gap-2 group">
-                  <label className="text-sm font-medium text-gray-300 px-1 transition-colors group-focus-within:text-[#39CEAF]">Mensaje</label>
+                <div className="flex flex-col gap-2 group relative">
+                  <label className="text-sm font-semibold text-gray-400 px-1 transition-colors group-focus-within:text-[#39CEAF]">Mensaje</label>
                   <textarea 
                     required
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Escribe tu idea aquí..." 
+                    placeholder="Escribe tu idea aquí... ¡Hablemos!" 
                     rows={4} 
-                    className="bg-[#161c27] border border-gray-600/50 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-[#39CEAF] focus:border-transparent outline-none transition-all resize-none placeholder-gray-500"
+                    className="w-full bg-[#181d24] border border-gray-700/50 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#39CEAF]/30 focus:border-[#39CEAF] transition-all duration-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)] hover:border-gray-500/50 resize-none"
                   ></textarea>
                 </div>
                 <button 
@@ -170,46 +171,71 @@ const Contact = () => {
               {/* Central Glowing Orb */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#39CEAF]/5 blur-[80px] pointer-events-none"></div>
 
-              {/* Floating Icons */}
-              {/* Github */}
-              <div className="absolute top-[15%] left-[20%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '0s' }}>
-                <div className="glass-card-contact w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center -rotate-12 group-hover:scale-110 transition-transform shadow-lg">
-                  <FaGithub className="text-[#39CEAF] text-4xl md:text-5xl opacity-80 group-hover:opacity-100 transition-opacity" />
+              {/* Floating Icons — all larger and properly spaced */}
+
+              {/* Github — top left */}
+              <a href="https://github.com/Yh0N" target="_blank" rel="noopener noreferrer" className="absolute top-[8%] left-[12%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '0s' }}>
+                <div className="glass-card-contact w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center -rotate-12 group-hover:scale-110 transition-transform shadow-xl">
+                  <FaGithub className="text-[#39CEAF] text-5xl md:text-6xl opacity-80 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30">GITHUB</span>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">GITHUB</span>
+              </a>
+
+              {/* Gmail — top right, big focal icon */}
+              <a href="mailto:jhon123moran21@gmail.com?subject=Hola%20Jhon%2C%20me%20interesa%20contactarte&body=Hola%20Jhon%2C%20te%20escribo%20porque..." className="absolute top-[6%] right-[10%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '0.8s' }}>
+                <div className="glass-card-contact w-28 h-28 md:w-36 md:h-36 rounded-3xl flex items-center justify-center rotate-12 group-hover:scale-110 transition-transform shadow-xl">
+                  <SiGmail className="text-[#39CEAF] text-5xl md:text-6xl opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">GMAIL</span>
+              </a>
+
+              {/* WhatsApp — left center */}
+              <a href="https://wa.link/p56tuv" target="_blank" rel="noopener noreferrer" className="absolute top-[42%] left-[5%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '0.5s' }}>
+                <div className="glass-card-contact w-20 h-20 md:w-28 md:h-28 rounded-[22px] flex items-center justify-center rotate-12 group-hover:scale-110 transition-transform shadow-xl">
+                  <FaWhatsapp className="text-[#39CEAF] text-4xl md:text-5xl opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">WHATSAPP</span>
+              </a>
+
+              {/* Instagram — center */}
+              <a href="https://www.instagram.com/jhoxn_mx/" target="_blank" rel="noopener noreferrer" className="absolute top-[38%] left-[38%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '1.5s' }}>
+                <div className="glass-card-contact w-20 h-20 md:w-28 md:h-28 rounded-2xl flex items-center justify-center rotate-6 group-hover:scale-110 transition-transform shadow-xl">
+                  <FiInstagram className="text-[#39CEAF] text-4xl md:text-5xl opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">INSTAGRAM</span>
+              </a>
+
+              {/* X (Twitter) — right center */}
+              <a href="https://x.com/Jhon09878611" target="_blank" rel="noopener noreferrer" className="absolute top-[40%] right-[8%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '1.2s' }}>
+                <div className="glass-card-contact w-18 h-18 md:w-24 md:h-24 p-5 rounded-2xl flex items-center justify-center -rotate-6 group-hover:scale-110 transition-transform shadow-xl">
+                  <FaXTwitter className="text-[#39CEAF] text-4xl md:text-5xl opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">X</span>
+              </a>
+
+              {/* Facebook — bottom center */}
+              <a href="https://www.facebook.com/jhon.moran.7169709/?locale=es_LA" target="_blank" rel="noopener noreferrer" className="absolute bottom-[8%] left-[40%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '2.7s' }}>
+                <div className="glass-card-contact w-20 h-20 md:w-26 md:h-26 p-5 rounded-full flex items-center justify-center -rotate-12 group-hover:scale-110 transition-transform shadow-xl">
+                  <FaFacebookF className="text-[#39CEAF] text-4xl md:text-5xl opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">FACEBOOK</span>
+              </a>
+
+              {/* Location — bottom left */}
+              <div className="absolute bottom-[12%] left-[8%] float-keyframe animate-float group" style={{ animationDelay: '3s' }}>
+                <div className="glass-card-contact w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center rotate-6 group-hover:scale-110 transition-transform shadow-xl">
+                  <IoLocationSharp className="text-[#39CEAF] text-3xl md:text-4xl opacity-80 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">COLOMBIA</span>
               </div>
 
-              {/* Instagram */}
-              <div className="absolute top-[50%] left-[55%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '1.5s' }}>
-                <div className="glass-card-contact w-16 h-16 md:w-24 md:h-24 rounded-lg flex items-center justify-center rotate-6 group-hover:scale-110 transition-transform shadow-lg">
-                  <FiInstagram className="text-[#39CEAF] text-3xl md:text-4xl opacity-80 group-hover:opacity-100 transition-opacity" />
+              {/* Phone — bottom right */}
+              <a href="tel:+573059836050" className="absolute bottom-[15%] right-[10%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '2.2s' }}>
+                <div className="glass-card-contact w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center -rotate-6 group-hover:scale-110 transition-transform shadow-xl">
+                  <FaPhoneAlt className="text-[#39CEAF] text-3xl md:text-4xl opacity-80 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30">INSTAGRAM</span>
-              </div>
-
-              {/* Location */}
-              <div className="absolute bottom-[15%] left-[15%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '3s' }}>
-                <div className="glass-card-contact w-14 h-14 md:w-20 md:h-20 rounded-2xl flex items-center justify-center -rotate-6 group-hover:scale-110 transition-transform shadow-lg">
-                  <IoLocationSharp className="text-[#39CEAF] text-2xl md:text-3xl opacity-80 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30">COLOMBIA</span>
-              </div>
-
-              {/* Gmail */}
-              <div className="absolute top-[20%] right-[15%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '0.8s' }}>
-                <div className="glass-card-contact w-24 h-24 md:w-32 md:h-32 rounded-3xl flex items-center justify-center rotate-12 group-hover:scale-110 transition-transform shadow-lg">
-                  <SiGmail className="text-[#39CEAF] text-4xl md:text-5xl opacity-80 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30">GMAIL</span>
-              </div>
-
-              {/* Phone */}
-              <div className="absolute bottom-[25%] right-[20%] float-keyframe animate-float group cursor-pointer" style={{ animationDelay: '2.2s' }}>
-                <div className="glass-card-contact w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center -rotate-6 group-hover:scale-110 transition-transform shadow-lg">
-                  <FaPhoneAlt className="text-[#39CEAF] text-2xl md:text-3xl opacity-80 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">+57 305 9836050</span>
-              </div>
+                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs font-mono text-[#39CEAF] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 bg-[#222831] px-3 py-1 rounded-full border border-[#39CEAF]/30 whitespace-nowrap">+57 305 9836050</span>
+              </a>
             </div>
           </section>
         </div>
